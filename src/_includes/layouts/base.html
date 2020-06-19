@@ -7,9 +7,12 @@
     <title>{{ title }}</title>
   </head>
   <body>
-    {% block content %}
+    {% include "partials/site-head.html" %}
+    <main tabindex="-1" id="main-content">
+      {% block content %}
       <p>Here is some placeholder content that will render if a template
-      doesn’t define a block.</p>
-    {% endblock %}
+        doesn’t define a block.</p>
+        {% endblock %}
+    </main>
   </body>
 </html>
