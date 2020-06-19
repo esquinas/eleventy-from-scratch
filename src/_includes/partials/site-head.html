@@ -3,7 +3,7 @@
 <header role="banner" class="site-head">
   <div class="wrapper">
     <div class="site-head__inner">
-      <a href="/" aria-label="Issue 33 - home" class="site-head__brand">
+      <a href="/" aria-label="{{ site.name }} - home" class="site-head__brand">
         {% include "partials/brand.svg" %}
       </a>
 
@@ -12,15 +12,19 @@
         aria-label="Primary navigaton"
       >
         <ul class="nav__list">
-          <li>
-            <a href="/">Home</a>
-          </li>
+
+          {% for item in navigation.items %}
+            <li>
+              <a href="{{ item.url }}">{{ item.text }}</a>
+            </li>
+          {% endfor %}
+          
           <li>
             <a href="/work">Work</a>
           </li>
         </ul>
       </nav>
-      
+
     </div>
   </div>
 </header>
